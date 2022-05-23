@@ -1,0 +1,26 @@
+welcome.message: "Hello Folks!"
+
+server:
+  port: 8081
+  error.path: "/error2"
+
+spring:
+  application.name: Messenger
+  cache:
+    type: "none"
+  thymeleaf:
+    cachable: false
+    cache: false
+    enabled: true 
+    prefix: file:src/main/resources/templates/
+    suffix: .html
+
+management:
+  endpoint:
+    #beans.enabled: true
+    #configprops.enabled: true
+    #env.enabled: true
+    #info.enabled: true
+    mappings.enabled: true
+
+  endpoints.web.exposure.include: "*"

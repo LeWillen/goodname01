@@ -1,0 +1,23 @@
+<!Doctype html/>
+<html>
+	<head>
+	<title>
+	Good Name01
+	</title>
+	</head>
+	<body>
+	<h2>Hello and Welcome on Good Name01</h2>
+	<br/>
+	<br/>
+	<br/>
+	<div>
+	<p th:each="msg,iterStat : ${messages}" th:attr="style=${iterStat.even}? 'Color: lime;': 'Color: Cyan;'" th:text="${msg}">Guten Tag Herr Mustermann</p>
+	</div>
+	<br/>
+	<br>
+	<form action="" method="post">
+		<input type="text" id="msg" name="msg" value=""/>
+		<input type="submit" value="submit"/>
+	</form>
+	</body>	
+</html>
