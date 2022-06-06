@@ -14,16 +14,6 @@ configurations {
 	}
 }
 
-jar {
-  manifest {
-    attributes(
-      'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-      'Main-Class': 'io.goodname01.messenger.MessengerApplication'
-    )
-  }
-}
-
-
 repositories {
 	mavenCentral()
 	maven { url 'https://repo.spring.io/milestone' }
@@ -45,3 +35,13 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+jar {
+  manifest {
+    attributes(
+	  'Class-Path': configurations.runtimeClasspath.files.collect { it.getName() }.join(' '),
+      'Main-Class': 'io.goodname01.messenger.MessengerApplication'
+    )
+  }
+}
+
