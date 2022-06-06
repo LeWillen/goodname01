@@ -16,10 +16,10 @@ import java.util.List;
 @Controller
 @RequestMapping("/view")
 @Slf4j
-public class MessengerController {
+public class MessengerController { 
 
 	@Autowired
-	private List<String> messages;
+	private List<Message> messages;
 
     @GetMapping
     public String show(Model model) {
@@ -31,12 +31,17 @@ public class MessengerController {
 
     @PostMapping
     public String sendMessage(
+			@RequestParam(name = "name", required = false, defaultValue = "")
+			String name, 
             @RequestParam(name = "msg", required = false, defaultValue = "")
-            String msg, Model model) {
-		this.messages.add(msg);
+            String msg, 
+            Model model) {
+		Message message = new Message(name, msg);
+		this.messages.add(message);
 		log.warn("Message added {}",msg);
 		log.warn("Messages so far {}",this.messages);
         model.addAttribute("messages", this.messages);
+        model.addAttribute("current_user", name);
         return "messenger"; //view
     }
 

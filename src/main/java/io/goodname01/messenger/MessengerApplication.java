@@ -1,5 +1,6 @@
 package io.goodname01.messenger;
 
+import io.goodname01.controller.Message;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,8 +20,8 @@ public class MessengerApplication {
 	}
 
 	@Bean
-	public List<String> messages() {
-		return new ArrayList<String>(100);
+	public List<Message> messages() {
+		return new ArrayList<Message>(100);
 	}
 
 }

@@ -1,6 +1,7 @@
 <!Doctype html/>
 <html>
 	<head>
+	<link rel="icon" type="image/png" href="/32x32pxfavicon.png"/>
 	<title>
 	Good Name01
 	</title>
@@ -10,13 +11,17 @@
 	<br/>
 	<br/>
 	<br/>
-	<div>
-	<p th:each="msg,iterStat : ${messages}" th:attr="style=${iterStat.even}? 'Color: lime;': 'Color: Cyan;'" th:text="${msg}">Guten Tag Herr Mustermann</p>
+	<div th:each="msg,iterStat : ${messages}" >
+	<p th:attr="style=${iterStat.even}? 'Color: lime;': 'Color: Cyan;'" 
+	   th:text="${msg.name}">Guten Tag Herr Mustermann
+	</p>
+	<p th:text="${msg.msg}"/>
 	</div>
 	<br/>
 	<br>
 	<form action="" method="post">
 		<input type="text" id="msg" name="msg" value=""/>
+		<input type="hidden" id="name" name="name" th:attr="value= ${current_user}">
 		<input type="submit" value="submit"/>
 	</form>
 	</body>	

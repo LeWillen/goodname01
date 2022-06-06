@@ -1,9 +1,15 @@
 ### Todo
 
 Version 0.0.2:
+[ ] Chatmessages je nach Kontakt färben
 [ ] View und Textfeld klarer gestalten  
 
+
 ### Done
+
+Version 0.0.2:
+[x] Anmeldung
+[x] Kontakte Anzeigen
 
 Version 0.0.1:
 

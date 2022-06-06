@@ -1,12 +1,17 @@
 <!Doctype html/>
 <html>
 	<head>
+	<link rel="icon" type="image/png" href="/32x32pxfavicon.png"/>
 	<title>
 	Good Name01
 	</title>
 	</head>
 	<body>
 	<h1>Hello and Welcome on Good Name01</h1>
-	<a href="/view">Click hier um zu messengen</a>
+	<form action="/view" method="post">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" value=""/>
+		<input type="submit" value="Start Messaging"/>
+	</form>
 	</body>	
 </html>
