@@ -2,24 +2,32 @@
 <html>
 	<head>
 	<link rel="icon" type="image/png" href="/32x32pxfavicon.png"/>
+	<link rel="stylesheet" href="/styles.css">
+	<style>
+		Body {
+			background-color: #1e2124;
+		}
+	</style>
+
 	<title>
 	Good Name01
 	</title>
 	</head>
 	<body>
-	<h2>Hello and Welcome on Good Name01</h2>
+	<h2 class="title">Hello and Welcome on Good Name01</h2>
 	<br/>
 	<br/>
 	<br/>
 	<div th:each="msg,iterStat : ${messages}" >
-	<p th:attr="style=${iterStat.even}? 'Color: lime;': 'Color: Cyan;'" 
+	<p th:attr="class=	${iterStat.even}? 'user1': 'user2'" 
 	   th:text="${msg.name}">Guten Tag Herr Mustermann
 	</p>
-	<p th:text="${msg.msg}"/>
+	<p class= "text" 
+	   th:text="${msg.msg}"/>
 	</div>
 	<br/>
 	<br>
-	<form action="" method="post">
+	<form id="eingabe" action="/view#eingabe" method="post">
 		<input type="text" id="msg" name="msg" value=""/>
 		<input type="hidden" id="name" name="name" th:attr="value= ${current_user}">
 		<input type="submit" value="submit"/>

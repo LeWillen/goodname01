@@ -1,0 +1,32 @@
+<style>
+body {
+	background-color: #1e2124;
+}
+	
+.user1 {
+	text-align: left;
+	color: Lime;
+	height: 20px;
+	font-family: "Arial";
+}
+
+.user2 {
+	text-align: left;
+	color: Cyan;
+	height: 50px;
+	font-family:"Arial";
+}
+
+.text {
+	text-align: left;
+	color: White;
+	height: 18px;
+	font-family:"Courier New"
+}
+
+.title {
+	height: 100px;
+	font-family: copperplate;
+	color: White
+}
+<style/>
