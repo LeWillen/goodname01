@@ -37,6 +37,18 @@ tasks.named('test') {
 }
 
 jar {
+	enabled = false
+    manifest {
+        attributes(
+                'Main-Class': 'io.goodname01.messenger.MessengerApplication'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+ }
+
+/*jar {
   manifest {
     attributes(
 	  'Class-Path': configurations.runtimeClasspath.files.collect { it.getName() }.join(' '),
@@ -44,4 +56,4 @@ jar {
     )
   }
 }
-
+*/
